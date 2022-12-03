@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { act } from "@testing-library/react";
 import { IUser } from "../../models/IUser"
 
 interface UserState {
@@ -21,7 +22,7 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         increment(state, action: PayloadAction<number>) {
-            
+            state.count += action.payload;
         }
     }
 })
